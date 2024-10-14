@@ -28,10 +28,25 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: counterProvider.incrementCounter, // Call increment function
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          // Increment button
+          FloatingActionButton(
+            onPressed:
+                counterProvider.incrementCounter, // Call increment function
+            tooltip: 'Increment',
+            child: const Icon(Icons.add),
+          ),
+          const SizedBox(width: 16), // Add spacing between buttons
+          // Decrement button
+          FloatingActionButton(
+            onPressed:
+                counterProvider.decrementCounter, // Call decrement function
+            tooltip: 'Decrement',
+            child: const Icon(Icons.remove),
+          ),
+        ],
       ),
     );
   }
